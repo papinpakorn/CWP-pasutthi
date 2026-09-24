@@ -2,15 +2,18 @@
 
 def checkmate(board):
     if not board or not isinstance(board, str):
+        print("Error")
         return
 
     lines = board.strip().split('\n')
     if not lines:
+        print("Error")
         return
 
     rows = len(lines)
     for line in lines:
         if len(line) != rows:
+            print("Error")
             return
         
     king_pos = None
@@ -22,6 +25,7 @@ def checkmate(board):
                 king_count += 1
 
     if king_count != 1:
+        print("Error")
         return
 
     kr, kc = king_pos
